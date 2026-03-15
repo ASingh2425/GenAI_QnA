@@ -23,10 +23,10 @@ uploaded_file = st.file_uploader("Upload a PDF", type="pdf")
 
 if uploaded_file:
 
-    with open("C:\\Users\\Anvesha\\OneDrive\\Desktop\\Proposal Ideas.docx", "wb") as f:
+    with open("temp.pdf", "wb") as f:
         f.write(uploaded_file.read())
 
-    loader = PyPDFLoader("C:\\Users\\Anvesha\\OneDrive\\Desktop\\Proposal Ideas.docx")
+    loader = PyPDFLoader("temp.pdf")
     documents = loader.load()
 
     splitter = RecursiveCharacterTextSplitter(
